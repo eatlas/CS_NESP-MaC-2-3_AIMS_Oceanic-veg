@@ -1,0 +1,7 @@
+/literature/**
+/private-src-data/**
+/temp/**
+/working/data-cache/**
+/__pycache__/**
+/deprecated/**
+/public/**
