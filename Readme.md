@@ -7,3 +7,5 @@ This repository also contains a script (`02-plot-ocean-veg-vs-drop-cam.py`) that
 
 The input datasets are described in the `01-download-src-data.py` script.
 
+See the [metadata record for this dataset](https://doi.org/10.26274/709g-aq12) for more information.
+
