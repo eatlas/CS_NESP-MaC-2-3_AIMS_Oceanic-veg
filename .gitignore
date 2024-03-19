@@ -5,3 +5,4 @@
 /__pycache__/**
 /deprecated/**
 /public/**
+!public/README.md
