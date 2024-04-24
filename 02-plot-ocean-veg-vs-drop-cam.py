@@ -45,7 +45,7 @@ gdf_with_reef = gpd.sjoin(
 gdf_with_reef['IN_REEF'] = gdf_with_reef.index_right.notnull()
 
 # Load oceanic vegetation shapefile
-oceanic_vegetation = gpd.read_file('CS_NESP-MaC-2-3_AIMS_Oceanic-veg.shp')
+oceanic_vegetation = gpd.read_file('public/CS_NESP-MaC-2-3_AIMS_Oceanic-veg.shp')
 
 
 # Join the density value from the oceanic vegetation
@@ -74,7 +74,7 @@ gdf_for_plot['Density'] = pd.Categorical(gdf_for_plot['Density'], categories=den
 sorted_gdf = gdf_for_plot.sort_values(by='Density')
 
 VARIABLE = 'AG_COVER'
-VAR_TITLE = 'Algae Cover'
+VAR_TITLE = 'Drop Camera Algae Cover'
 
 # Combine 'Low' and 'Medium' into 'Low-Medium'
 # We do this because there is only 2 survey locations overlapping
@@ -91,7 +91,7 @@ new_labels = [f'{label}, n={counts[label]}' for label in counts.index]
 # Plot BENTH_COVER as a function of vegetation density
 fig, ax = plt.subplots()
 sorted_gdf.boxplot(column=VARIABLE, by='Density', ax=ax)
-ax.set_title(f'{VAR_TITLE} vs Vegetation Density (Excluding In-Reef Points)')
+ax.set_title(f'{VAR_TITLE} vs Satellite Estimated Vegetation Density (Excluding In-Reef Points)')
 # Set the new labels on the x-axis
 ax.set_xticklabels(new_labels)
 ax.set_xlabel('Vegetation Density')
