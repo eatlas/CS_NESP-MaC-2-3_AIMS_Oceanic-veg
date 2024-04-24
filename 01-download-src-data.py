@@ -86,4 +86,13 @@ patterns = [
 # the overall paths too long. 
 downloader.download_unzip_keep_subset(direct_download_url, patterns, 'Wld_AIMS_Marine-sat-img_Oceanic-veg')
 
+#----------------------------------------------------
+# Natural Earth Data - Land 50m v4.0.0, https://www.naturalearthdata.com/downloads/50m-physical-vectors/
+# For some reason I am getting a 'HTTP Error 406: Not Accepable' error, but the download works when
+# manually from a web browser. For this reason we need a manual download.
+print("WARNING: I couldn't get one of the datasets to automatically download so please download in a browser:")
+print("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/physical/ne_50m_land.zip")
+print("Unpack zip to working/data-cache/ne_50m_land/")
+#direct_download_url = 'https://www.naturalearthdata.com/download/50m/physical/ne_50m_land.zip'
+#downloader.download_and_unzip(direct_download_url, 'ne_50m_land')
         
