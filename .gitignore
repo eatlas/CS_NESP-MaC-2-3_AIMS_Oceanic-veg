@@ -1,7 +1,8 @@
 /literature/**
 /private-src-data/**
 /temp/**
-/working/data-cache/**
+/working/**
+!/working/README.md
 /__pycache__/**
 /deprecated/**
 /public/**
