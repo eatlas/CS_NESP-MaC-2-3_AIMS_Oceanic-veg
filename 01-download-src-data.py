@@ -7,8 +7,6 @@ downloader = DataDownloader(download_path="working/data-cache")
 
 print("Downloading source data files. This will take a while ...")
 
-
-
 # --------------------------------------------------------
 # CS_AIMS_Coral-Sea-Features_Img
 # Citation: Lawrey, E., & Hammerton, M. (2022). Coral Sea features satellite imagery and raw depth contours (Sentinel 2 and Landsat 8) 2015 – 2021 (AIMS) [Data set]. eAtlas. https://doi.org/10.26274/NH77-ZW79
@@ -45,34 +43,14 @@ download_sat_product('S2_R2_DeepFalse')
 download_sat_product('S2_R1_DeepFalse')
 download_sat_product('L8_R1_DeepFalse')
 
-		
-
-    
-# ----------------------------------------------------------------------
-#    Landsat and Sentinel imagery from Geoscience Australia, via NCI
-#dataset_path = os.path.join(DOWNLOAD_PATH,"AU_GA_Landsat-8-OLI_Collection-3","raw")
-#Path(dataset_path).mkdir(parents=True, exist_ok=True)
-#download('https://dapds00.nci.org.au/thredds/fileServer/xu18/ga_ls9c_ard_3/097/067/2022/09/28/ga_ls9c_nbar_3-2-1_097067_2022-09-28_final_band02.tif', \
-#        os.path.join(dataset_path, "ga_ls9c_nbar_3-2-1_097067_2022-09-28_final_band02.tif"))
-#download('https://dapds00.nci.org.au/thredds/fileServer/xu18/ga_ls9c_ard_3/097/067/2022/09/28/ga_ls9c_nbar_3-2-1_097067_2022-09-28_final_band07.tif', \
-#        os.path.join(dataset_path, "ga_ls9c_nbar_3-2-1_097067_2022-09-28_final_band07.tif"))
-#        
-#download('https://dapds00.nci.org.au/thredds/fileServer/xu18/ga_ls8c_ard_3/097/067/2022/09/04/ga_ls8c_nbar_3-2-1_097067_2022-09-04_final_band02.tif', \
-#        os.path.join(dataset_path, "ga_ls8c_nbar_3-2-1_097067_2022-09-04_final_band02.tif"))
-#download('https://dapds00.nci.org.au/thredds/fileServer/xu18/ga_ls8c_ard_3/097/067/2022/09/04/ga_ls8c_nbar_3-2-1_097067_2022-09-04_final_band07.tif', \
-#        os.path.join(dataset_path, "ga_ls8c_nbar_3-2-1_097067_2022-09-04_final_band07.tif"))
-
 
 #----------------------------------------------------
-# Lawrey, E., Hammerton, M. (2024). Marine satellite imagery test collections (AIMS) [Data set]. eAtlas.
-# https://doi.org/10.26274/zq26-a956
-
-
+# Lawrey, E. (2024). Estimating benthic reflectance of deep coral atoll lagoons from satellite 
+# imagery and bathymetry - Analysis code and case studies (NESP MaC 2.3, AIMS) [Data set]. eAtlas. 
+# https://doi.org/10.26274/s2a8-nw72
 direct_download_url = 'https://nextcloud.eatlas.org.au/s/orNy3H9Cp5ZBQjQ/download?path=%2F%2F55KFA-8'
 downloader.download_and_unzip(direct_download_url, 'CS_NESP-MaC-2-3_AIMS_Benth-Reflect')
 
-#direct_download_url = #'https://nextcloud.eatlas.org.au/apps/sharealias/a/9tbZP8Rbk5FxiQ6/download?path=%2FCS_NESP-MaC-2-3_AIMS_Oceanic-veg'
-#downloader.download_and_unzip(direct_download_url, 'Wld_AIMS_Marine-sat-img_Oceanic-veg')
 
 #----------------------------------------------------
 # Lawrey, E., Hammerton, M. (2024). Marine satellite imagery test collections (AIMS) [Data set]. eAtlas.
@@ -85,6 +63,20 @@ patterns = [
 # Use this approach as the zip file contains an internal CS_NESP-MaC-2-3_AIMS_Benthic-reflectance/ that makes
 # the overall paths too long. 
 downloader.download_unzip_keep_subset(direct_download_url, patterns, 'Wld_AIMS_Marine-sat-img_Oceanic-veg')
+
+
+
+#----------------------------------------------------
+# Lawrey, E., Hammerton, M. (2024). Marine satellite imagery test collections (AIMS) [Data set]. eAtlas.
+# https://doi.org/10.26274/zq26-a956
+direct_download_url = 'https://nextcloud.eatlas.org.au/s/xF7iApHqmNknWWH/download?path=%2FReef-boundaries'
+# Define the patterns to search for
+patterns = [
+    'Reef-boundaries/*',
+]
+# Use this approach as the zip file contains an internal CS_NESP-MaC-2-3_AIMS_Benthic-reflectance/ that makes
+# the overall paths too long. 
+downloader.download_unzip_keep_subset(direct_download_url, patterns, 'CS_AIMS_Coral-Sea-Features_2024')
 
 #----------------------------------------------------
 # Natural Earth Data - Land 50m v4.0.0, https://www.naturalearthdata.com/downloads/50m-physical-vectors/
